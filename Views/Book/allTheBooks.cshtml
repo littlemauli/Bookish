@@ -1,12 +1,15 @@
-@model BookListViewModel
-@* @{
-    ViewData["Title"] = "Home Page";
-} *@
+@model BookListModel
+@{
+    ViewData["Title"] = "Book List";
+}
 
 <div class="text-center">
     <h1 class="display-4"> All the books available </h1>
    
    <ol>
-       <li></li>
+        @foreach (var item in @Model.BookList)
+        {
+            <li>@item.DisplayBook()</li>           
+        }
    </ol>
 </div>

@@ -9,7 +9,7 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
-    [Route("library")]
+    [Route("book")]
     public class BookController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,7 +18,7 @@ namespace Bookish.Controllers
         {
             _logger = logger;
         }
-        [HttpGet("")]
+        [HttpGet("oneBook")]
         public IActionResult Index()
         {
             return View();
@@ -27,23 +27,25 @@ namespace Bookish.Controllers
         [HttpGet("allTheBooks")]
         public IActionResult AllTheBooks()
         {
-            var bookList = new BookListViewModel {
-                BookList = new List<Book> {
-                    new Book {
-                        Title = "Book1",
-                        Author = "Christian",
-                        Year = 2010
+            var bookList = new BookListModel
+            {
+                BookList = new List<BookModel>
+                {
+                    new BookModel {
+                        BookTitle = "Book1",
+                        BookAuthor = "Christian",
+                        BookYear = 2010
                     },
-                    new Book {
-                        Title = "Book2",
-                        Author = "Hina",
-                        Year = 2014
+                    new BookModel {
+                        BookTitle = "Book2",
+                        BookAuthor = "Hina",
+                        BookYear = 2014
                     },
-                     new Book {
-                        Title = "Book3",
-                        Author = "Mariam",
-                        Year = 1998
-                    },
+                     new BookModel {
+                        BookTitle = "Book3",
+                        BookAuthor = "Mariam",
+                        BookYear = 1998
+                    }
                 }
             };
             return View(bookList);

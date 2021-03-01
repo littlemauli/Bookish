@@ -3,21 +3,27 @@ using System.Collections.Generic;
 
 namespace Bookish.Models
 {
-        public class Book
+        public class BookModel
     {
         public int BookId {get ; set;}
-        public string Title {get ; set;}
-        public string Author {get ; set;}
-        public int Year {get ; set;}
+        public string BookTitle {get ; set;}
+        public string BookAuthor {get ; set;}
+        public int BookYear {get ; set;}
 
-        public int TotalNumberOfCopies {get; set;}
+        public int BookTotalCopies {get; set;}
 
-        public int NumberOfAvailableCopies {get; set;}
+        public int BookAvailableCopies {get; set;}
 
-        public int NumberOfBorrowedCopies{get; set;}
+        public int BookBorrowedCopies{get; set;}
 
-         string showBook(){
-           return $"{Title} by {Author} published in{Year}";
+        public string DisplayBook()
+        {
+           return $"{BookTitle} was written by {BookAuthor} and published in {BookYear}. The library holds usually {BookTotalCopies} copies, but only {BookAvailableCopies} copies are available now. ";
         }
+
+        // public override string ToString()
+        // {
+        //    return $"{BookTitle} was written by {BookAuthor} and published in {BookYear}. The library holds usually {BookTotalCopies} copies, but only {BookAvailableCopies} copies are available now. ";
+        // }
     }
 }

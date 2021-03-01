@@ -9,7 +9,7 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
-
+    [Route("library")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

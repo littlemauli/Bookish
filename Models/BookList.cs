@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace Bookish.Models
 {
-    public class BookListViewModel
+    public class BookListModel
      {
-        public List<Book> BookList { get; set; }
+        public List<BookModel> BookList { get; set; }
     }
 }

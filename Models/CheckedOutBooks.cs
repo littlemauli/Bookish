@@ -3,15 +3,19 @@ using System.Collections.Generic;
 
 namespace Bookish.Models
 {
-     public class BookOut
+     public class BookCheckedOutModel
     {
-        public string Title {get ; set;}
-        public string Author {get ; set;}
-        public int Year {get ; set;}
+        public string BookTitle {get ; set;}
+        public string BookAuthor {get ; set;}
+        public int BookYear {get ; set;}
 
-        public int CheckedOutByLibrarian {get; set;}
+        public int BookCheckedOutByLibrarian {get; set;}
 
-        public int BorrowedByUser{get; set;}
+        public int BookBorrowedByUser{get; set;}
+
+       public DateTime BookCheckedOut {get; set;}
+
+       public DateTime BookToBeReturned {get;set;}
 
     }
 }

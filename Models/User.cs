@@ -4,15 +4,11 @@ using System.Collections.Generic;
 
 namespace Bookish.Models
 {
-
-
-public class User
+    public class UserModel
     {
-       public string Name {get ; set;}
-       public int DOB {get ; set;}
-       public int UserId {get ; set;}
-
-       public int NumberOfBooksBorrowed {get ;set;}
-     
+        public int UserId { get; set; }
+        public string UserName { get; set; }
+        public int UserDOB { get; set; }
+        public int AmountBorrowedByUser { get; set; }
     }
 }
