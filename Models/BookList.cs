@@ -5,6 +5,6 @@ namespace Bookish.Models
 {
     public class BookListModel
      {
-        public List<BookModel> BookList { get; set; }
+        public List<BookModel> BookList { get; set; }= new List<BookModel>();
     }
 }
