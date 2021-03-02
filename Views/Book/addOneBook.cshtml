@@ -1,44 +1,52 @@
+@model Bookish.Models.BookModel
 
-@model Form_Post_MVC.Models.BookModel
- 
-@{
-    Layout = null;
-}
-<body>
-@using (Html.BeginForm("addOneBook", "book", FormMethod.Post)){
+<div>
+    @using (Html.BeginForm("addOneBookForm", "book", FormMethod.Post))
+    {
 
-<h1>Please enter a book here</h1>
-<form>
-    <table>
-        <tr>
-            <th colspan="2" align="center">Book Details</th>
+        <h1>Please enter a book here</h1>
+        
+            <table>
+                <tr>
+                    <th colspan="2" align="center">Book Details</th>
 
-        </tr>
-        <tr>
-            <td>BookId</td>
-            <td><input type="number" name="BookId" required></td>
+                </tr>
+                <tr>
+                    <td>BookTitle</td>
+                    <td>@Html.TextBoxFor(m => m.BookTitle)</td>
+
+                </tr>
+                <tr>
+                    <td>BookAuthor</td>
+                    <td>@Html.TextBoxFor(m => m.BookAuthor)</td>
+
+                </tr>
+                <tr>
+                    <td>BookYear</td>
+                    <td>@Html.TextBoxFor(m => m.BookYear)</td>
+
+                </tr>
+
+                <tr>
+                    <td>BookTotalCopies</td>
+                    <td>@Html.TextBoxFor(m => m.BookTotalCopies)</td>
+
+                </tr>
+                <tr>
+                    <td>BookAvailableCopies</td>
+                    <td>@Html.TextBoxFor(m => m.BookAvailableCopies)</td>
+                </tr>
+
+                <tr>
+                    <td>BookBorrowedCopies</td>
+                    <td>@Html.TextBoxFor(m => m.BookBorrowedCopies)</td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"/></td>
+                </tr>
+
+            </table>
             
-           
-        </tr>
-        <tr>
-            <td>BookTitle</td>
-            <th input type="text" name="BookTitle" required> </th>
-
-        </tr>
-        <tr>
-            <td>BookAuthor</td>
-            <td >@Html.TextBoxFor(m => m.BookId) </td>
-
-        </tr>
-        <tr>
-
-        </tr>
-        <tr>
-
-        </tr>
-
-    </table>
-<button type="submit">Submit</button>
-</form>
-}
-</body>
+        
+    }
+</div>

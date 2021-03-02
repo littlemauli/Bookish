@@ -19,22 +19,20 @@ namespace Bookish.Controllers
         {
             _logger = logger;
         }
-        [HttpGet("addOneBook")]
-        public IActionResult addOneBook()
+        [HttpGet("addOneBookPage")]
+        public IActionResult AddOneBook()
         {
             return View();
         }
 
-        [HttpPost("addOneBook")]
-        public IActionResult doAddOneBook(BookModel book)
+        [HttpPost("addOneBookForm")]
+        public IActionResult AddOneBookFormMethod(BookModel book)
         {
-           int bookId = book.BookId;
-           string bookTitle = book.BookTitle;
-           string bookAuthor = book.BookAuthor;
-           int BookYear = book.BookYear;
-           int bookTotalCopies = book.BookTotalCopies;
-           
-           return View();
+            var context = new BookishContext();
+            context.BookModel.Add(book);
+            context.SaveChanges();
+
+            return RedirectToAction(nameof(AddOneBook));
         }
 
 
@@ -43,7 +41,7 @@ namespace Bookish.Controllers
         public IActionResult AllTheBooks()
         {
             var bookList = new BookListModel { };
-              // bookList.BookList= new List<BookModel>();
+            // bookList.BookList= new List<BookModel>();
 
             var context = new BookishContext();
             var shelves = context.BookModel;
