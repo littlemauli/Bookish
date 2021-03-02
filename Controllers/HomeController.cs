@@ -29,12 +29,6 @@ namespace Bookish.Controllers
             return View();
         }
 
-        // [HttpGet("allTheBooks")]
-        // public IActionResult AllTheBooks()
-        // {
-        //     return View();
-        // }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
