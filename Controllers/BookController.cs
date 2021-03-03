@@ -25,7 +25,7 @@ namespace Bookish.Controllers
             return View();
         }
 
-        [HttpPost("addOneBookForm")]
+        [HttpPost("addOneBookToDB")]
         public IActionResult AddOneBookFormMethod(BookModel book)
         {
             var context = new BookishContext();

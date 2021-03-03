@@ -19,10 +19,45 @@ namespace Bookish.Controllers
         {
             _logger = logger;
         }
-        [HttpGet("userAccount")]
-        public IActionResult AllTheUsers()
+        [HttpGet("userAccountSearch")]
+        public IActionResult UserSearch()
         {
             return View();
+        }
+
+        [HttpGet("userAccountSearchPost")]
+        public IActionResult SearchOneUser(string search)
+        {
+            var context = new BookishContext();
+            
+                List<UserModel> users;
+            if (!String.IsNullOrEmpty(search))
+            {
+                users = context.UserModel.Where(x => x.UserName == search).ToList();
+            } else {
+                users = context.UserModel.ToList();
+            }
+            var userlist = new UserListModel {UserList = users};
+
+            return View(userlist);
+          
+        }
+
+
+        [HttpGet("addOneUserPage")]
+        public IActionResult AddOneUser()
+        {
+            return View();
+        }
+
+        [HttpPost("addOneUserToDB")] //can we leave this empty since its not taking us to a page?
+        public IActionResult AddOneUserFormMethod(UserModel user)
+        {
+            var context = new BookishContext();
+            context.UserModel.Add(user);
+            context.SaveChanges();
+
+            return RedirectToAction(nameof(AddOneUser));
         }
 
         [HttpGet("librarianAccount")]

@@ -1,0 +1,33 @@
+@model Bookish.Models.UserListModel;
+@using System.Collections.Generic; 
+
+
+<div>
+    <ol>
+     @foreach (var person in @Model.UserList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(User => person.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>person.UserDOB)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>person.AmountBorrowedByUser)
+                </td>
+                <td>
+                    <input type="submit"  value ="delete this user"/>
+                    @* <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> ||
+                    <a asp-action="Delete" asp-route-id="@person.Id">Delete</a> *@
+                </td>
+            </tr>
+        }
+
+</ol>
+
+      
+
+</div>
+
+
