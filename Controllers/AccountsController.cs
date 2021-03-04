@@ -29,18 +29,27 @@ namespace Bookish.Controllers
         public IActionResult SearchOneUser(string search)
         {
             var context = new BookishContext();
-            
-                List<UserModel> users;
+            List<UserModel> users;
             if (!String.IsNullOrEmpty(search))
             {
-                users = context.UserModel.Where(x => x.UserName == search).ToList();
-            } else {
+                int dob;
+                if (int.TryParse(search, out dob))
+                {
+                    users = context.UserModel.Where(x => x.UserDOB == dob).ToList();
+                }
+                else
+                {
+                    users = context.UserModel.Where(x => x.UserName == search).ToList();
+                }
+            }
+            else
+            {
                 users = context.UserModel.ToList();
             }
-            var userlist = new UserListModel {UserList = users};
+            var userlist = new UserListModel { UserList = users };
 
             return View(userlist);
-          
+
         }
 
 
@@ -59,6 +68,20 @@ namespace Bookish.Controllers
 
             return RedirectToAction(nameof(AddOneUser));
         }
+
+        [HttpPost("Delete")]
+        public IActionResult Delete(int userId)
+        {
+            var context = new BookishContext();
+            var user = context.UserModel.Find(userId);
+            if (user != null)
+            {
+                context.UserModel.Remove(user);
+                context.SaveChanges();
+            }
+            return RedirectToAction(nameof(UserSearch));
+        }
+
 
         [HttpGet("librarianAccount")]
         public IActionResult AllTheLibrarians()

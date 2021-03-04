@@ -17,9 +17,9 @@
                     @Html.DisplayFor(User =>person.AmountBorrowedByUser)
                 </td>
                 <td>
-                    <input type="submit"  value ="delete this user"/>
-                    @* <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> ||
-                    <a asp-action="Delete" asp-route-id="@person.Id">Delete</a> *@
+                    @*<button action="" type="submit"  value ="delete this user"/>
+                    <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> ||*@
+                    <a asp-action="Delete" asp-route-id="@person.UserId">Delete</a> 
                 </td>
             </tr>
         }
