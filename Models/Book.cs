@@ -18,6 +18,8 @@ namespace Bookish.Models
 
         public int BookBorrowedCopies{get; set;}
 
+        public ICollection<BookCheckedOutModel> BookCheckedOutModels {get;set;}
+
         public string DisplayBook()
         {
            return $"{BookTitle} was written by {BookAuthor} and published in {BookYear}. The library holds usually {BookTotalCopies} copies, but only {BookAvailableCopies} copies are available now. ";

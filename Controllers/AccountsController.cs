@@ -32,8 +32,8 @@ namespace Bookish.Controllers
             List<UserModel> users;
             if (!String.IsNullOrEmpty(search))
             {
-                int dob;
-                if (int.TryParse(search, out dob))
+                DateTime dob;
+                if (DateTime.TryParse(search, out dob))
                 {
                     users = context.UserModel.Where(x => x.UserDOB == dob).ToList();
                 }
@@ -69,11 +69,12 @@ namespace Bookish.Controllers
             return RedirectToAction(nameof(AddOneUser));
         }
 
-        [HttpPost("Delete")]
-        public IActionResult Delete(int userId)
+        [HttpPost]
+        public IActionResult Delete(int id)
         {
+            Console.WriteLine(id);
             var context = new BookishContext();
-            var user = context.UserModel.Find(userId);
+            var user = context.UserModel.Find(id);
             if (user != null)
             {
                 context.UserModel.Remove(user);

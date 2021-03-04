@@ -75,3 +75,4 @@ C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\addOneBook.cshtml.g.cs
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Accounts\addOneUser.cshtml.g.cs
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Accounts\UserSearch.cshtml.g.cs
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Accounts\searchOneUser.cshtml.g.cs
+C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\bookCheckout.cshtml.g.cs

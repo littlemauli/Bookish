@@ -50,28 +50,32 @@ namespace Bookish.Controllers
                 bookList.BookList.Add(book);
             }
 
-
-            // {
-            //     // BookList = new List<BookModel>
-            //     // {
-            //     //     new BookModel {
-            //     //         BookTitle = "Book1",
-            //     //         BookAuthor = "Christian",
-            //     //         BookYear = 2010
-            //     //     },
-            //     //     new BookModel {
-            //     //         BookTitle = "Book2",
-            //     //         BookAuthor = "Hina",
-            //     //         BookYear = 2014
-            //     //     },
-            //     //      new BookModel {
-            //     //         BookTitle = "Book3",
-            //     //         BookAuthor = "Mariam",
-            //     //         BookYear = 1998
-            //     //     }
-            //     // }
-            // };
             return View(bookList);
+        }
+
+
+        [HttpGet("bookCheckout")]
+        public IActionResult BookCheckout()
+        {
+            return View();
+        }
+
+        [HttpPost("bookCheckoutPost")]
+        public IActionResult BookCheckoutPost(BookCheckedOutModel item){
+         var context = new BookishContext();
+
+            var bookOut =context.BookModel.Find(item.BookId);
+             bookOut.BookBorrowedCopies +=1;
+             bookOut.BookAvailableCopies -=1;
+
+            var userOut =context.UserModel.Find(item.UserId);
+            userOut.AmountBorrowedByUser +=1;
+
+            context.BookCheckedOutModel.Add(item);
+
+           context.SaveChanges();
+
+          return RedirectToAction(nameof(BookCheckout));
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

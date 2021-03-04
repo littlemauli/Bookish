@@ -11,7 +11,9 @@ namespace Bookish.Models
         [Key]
         public int UserId { get; set; }
         public string UserName { get; set; }
-        public int UserDOB { get; set; }
+        public DateTime UserDOB { get; set; }
         public int AmountBorrowedByUser { get; set; }
+
+        public ICollection<BookCheckedOutModel> BookCheckedOutModels {get; set;}
     }
 }

@@ -12,6 +12,7 @@ namespace Bookish.Models
         public string LibrarianName { get; set; }
 
         public bool LibrarianIsAdmin {get; set;}
+         public ICollection<BookCheckedOutModel> BookCheckedOutModels {get;set;}
     }
 
 
@@ -19,4 +20,5 @@ namespace Bookish.Models
      {
         public List<LibrarianModel> LibrarianList { get; set; }
     }
+   
 }

@@ -1,0 +1,47 @@
+@model Bookish.Models.BookCheckedOutModel;
+
+
+<div>
+
+    @* <form asp-controller="book" method="POST" asp-action="checkout" asp-route-id="@person.UserId" > *@
+
+    @using (Html.BeginForm("bookCheckoutPost", "book", FormMethod.Post))
+    {
+
+        <h1>Please enter details for checkout</h1>
+
+        <table>
+
+            <tr>
+                <td>Librarian</td>
+                <td>@Html.TextBoxFor(m => m.LibrarianId)</td>
+
+            </tr>
+            <tr>
+                <td>UserID</td>
+                <td>@Html.TextBoxFor(m => m.UserId)</td>
+
+            </tr>
+
+            <tr>
+                <td>BookID</td>
+                <td>@Html.TextBoxFor(m => m.BookId)</td>
+
+            </tr>
+
+            <tr>
+                <td>Issue Date</td>
+                <td>@Html.TextBoxFor(m => m.IssueDate)</td>
+            </tr>
+            
+            <tr>
+                <td>Return Date</td>
+                <td>@Html.TextBoxFor(m => m.ReturnDate)</td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+
+        </table>
+    }
+</div>
