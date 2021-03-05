@@ -30,6 +30,19 @@ namespace Bookish.Controllers
             return View();
         }
 
+
+         [HttpGet("ShowLibrarianCommand")]
+        public IActionResult ShowLibrarianCommand()
+        {
+            return View();
+        }
+
+        [HttpGet("ShowMemberCommand")]
+        public IActionResult ShowMemberCommand()
+        {
+           return View(); 
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

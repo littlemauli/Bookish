@@ -28,10 +28,14 @@ a {
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  background: url("../wholeBookShelf.png") no-repeat center center fixed;
+  background-size: cover;
 }
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    background: url("../wholeBookShelf.png") no-repeat center center fixed;
+    background-size: cover;
   }
 }
 

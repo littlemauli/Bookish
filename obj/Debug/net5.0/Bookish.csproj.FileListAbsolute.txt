@@ -78,3 +78,7 @@ C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Accounts\searchOneUser.cshtml.g
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\bookCheckout.cshtml.g.cs
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\bookSearch.cshtml.g.cs
 C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\searchOneBook.cshtml.g.cs
+C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\ListOfBorrowers.cshtml.g.cs
+C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Book\whoHasTheBook.cshtml.g.cs
+C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Home\ShowLibrarianCommand.cshtml.g.cs
+C:\training\Bookish\obj\Debug\net5.0\Razor\Views\Home\ShowMemberCommand.cshtml.g.cs

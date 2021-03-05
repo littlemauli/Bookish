@@ -1,0 +1,27 @@
+@model Bookish.Models.BookCheckedOutListModel;
+@using System.Collections.Generic; 
+
+
+<div>
+    <table>
+     @foreach (var el in @Model.BookCheckedOutList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(thing => el.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>el.ReturnDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>el.LibrarianId)
+                </td>
+                
+            </tr>
+        }
+
+</table>
+
+      
+
+</div>

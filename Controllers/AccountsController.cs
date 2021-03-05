@@ -72,9 +72,8 @@ namespace Bookish.Controllers
         [HttpPost]
         public IActionResult Delete(int id)
         {
-            Console.WriteLine(id);
             var context = new BookishContext();
-            var user = context.UserModel.Find(id);
+            var user = context.UserModel.Find(id); //why not user.id?
             if (user != null)
             {
                 context.UserModel.Remove(user);
@@ -84,23 +83,23 @@ namespace Bookish.Controllers
         }
 
 
-        [HttpGet("librarianAccount")]
-        public IActionResult AllTheLibrarians()
-        {
-            var librarianList = new LibrarianListModel
-            {
-                LibrarianList = new List<LibrarianModel>
-                {
-                    new LibrarianModel
-                    {
-                        LibrarianId = 345,
-                        LibrarianName = "David",
-                        LibrarianIsAdmin = true
-                    }
-                }
-            };
-            return View(librarianList);
-        }
+        // [HttpGet("librarianAccount")]
+        // public IActionResult AllTheLibrarians()
+        // {
+        //     var librarianList = new LibrarianListModel
+        //     {
+        //         LibrarianList = new List<LibrarianModel>
+        //         {
+        //             new LibrarianModel
+        //             {
+        //                 LibrarianId = 345,
+        //                 LibrarianName = "David",
+        //                 LibrarianIsAdmin = true
+        //             }
+        //         }
+        //     };
+        //     return View(librarianList);
+        // }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

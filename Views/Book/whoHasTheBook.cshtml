@@ -1,0 +1,14 @@
+@model Bookish.Models.BookCheckedOutModel;
+
+<div>
+
+
+@using(Html.BeginForm("ListOfBorrowers", "book", FormMethod.Get)) {  
+    //the following are search options
+    
+    <b> Search by Id of book </b>
+       
+     @Html.TextBox("search") <input type = "submit"  name = "submit" value = "Search"/>  
+
+}
+</div>

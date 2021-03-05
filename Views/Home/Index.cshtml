@@ -6,29 +6,14 @@
 
 <div class="text-center">
     <h3 class="display-4">Welcome to the library</h3>
-    <button class="main-button" type="submit" onclick="">
-        <h2> If you are a member, click here</h2>
-    </button>
-    <br>
-    <button class="main-button" type="submit" onclick="">
-        <h2> If you are a librarian, click here</h2>
-    </button>
-    <br>
-    <p>Please Select what you would like to do:</p>
-    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/addOneBookPage';"> Add a
-        Book to the library stock</button>
-    <button type="submit" class="yy" onclick="window.location.href='https://localhost:5001/book/allTheBooks';"> Display
-        all available books</button>
-    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/bookCheckout';">
-        Checkout a book</button>
-    <button type="submit" class="xx"
-        onclick="window.location.href='https://localhost:5001/accounts/userAccountSearch';"> Search for a specific
-        member</button>
-    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/accounts/addOneUserPage';">
-        Add a new member</button>
-    <button type="submit" class="yy" onclick="window.location.href='https://localhost:5001/library/privacy';"> View our
-        privacy conditions</button>
-    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/bookSearch';"> Search
-        for a book by Title</button>
+    <br />
+    <form asp-controller="library" class="main-button" method="GET" asp-action="ShowLibrarianCommand"><button type="submit"> If you are a
+            librarian, click here</button></form>
+    <br />
+    <form asp-controller="library" class="main-button" method="GET" asp-action="ShowMemberCommand"><button type="submit"> If you are a
+            member, click here</button></form>
+<img  id="image" src="../wholeBookShelf.png" />
+
+  
 
 </div>

@@ -105,6 +105,30 @@ namespace Bookish.Controllers
           return RedirectToAction(nameof(BookCheckout));
         }
 
+
+       [HttpGet("WhoHasTheBook")]
+        public IActionResult WhoHasTheBook()
+        {
+            return View();
+        }
+
+        [HttpGet("ThesePeopleHaveTheBook")]
+        public IActionResult ListOfBorrowers(int search)
+        {
+            
+            var context = new BookishContext();
+             List<BookCheckedOutModel> checkedOutBook;
+             
+                 checkedOutBook =context.BookCheckedOutModel.Where(x => x.BookId == search).ToList();
+             
+             var checkedOutBookList = new BookCheckedOutListModel { BookCheckedOutList = checkedOutBook };
+
+             return View(checkedOutBookList);
+
+        }
+
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

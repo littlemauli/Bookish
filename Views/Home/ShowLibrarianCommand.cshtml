@@ -1,0 +1,28 @@
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+
+<div class="text-center">
+    <h3 class="display-4"> Dear Librarian, welcome to the library!</h3>
+
+<p>Please Select what you would like to do:</p>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/addOneBookPage';"> Add a
+        Book to the library stock</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/allTheBooks';"> Display
+        all available books</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/bookCheckout';">
+        Checkout a book</button>
+    <button type="submit" class="xx"
+        onclick="window.location.href='https://localhost:5001/accounts/userAccountSearch';"> Search for a specific
+        member</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/accounts/addOneUserPage';">
+        Add a new member</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/library/privacy';"> View our
+        privacy conditions</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/bookSearch';"> Search
+        for a book by Title</button>
+    <button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/WhohasTheBook';">Who has a certain book and when will it be returned</button>

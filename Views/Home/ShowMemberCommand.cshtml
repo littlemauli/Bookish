@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="@Url.Content("~/css/index.css")" rel="stylesheet" type="text/css" />
+
+<div class="text-center">
+    <h3 class="display-4"> Dear Member, welcome to the library!</h3>
+
+<p>Please Select what you would like to do:</p>
+<button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/allTheBooks';"> Display
+        all available books</button>
+<button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/library/privacy';"> View our
+        privacy conditions</button>
+<button type="submit" class="xx" onclick="window.location.href='https://localhost:5001/book/bookSearch';"> Search
+        for a book by Title</button>
