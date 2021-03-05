@@ -36,6 +36,33 @@ namespace Bookish.Controllers
         }
 
 
+        [HttpGet("bookSearch")]
+        public IActionResult BookSearch()
+        {
+            return View();
+        }
+
+        [HttpGet("searchOneBookResult")]
+        public IActionResult SearchOneBook(string search)
+        {
+            var context = new BookishContext();
+            List<BookModel> books;
+            if (!String.IsNullOrEmpty(search))
+            {
+                books = context.BookModel.Where(x => x.BookTitle == search).ToList();
+            }
+            else
+            {
+                books = context.BookModel.ToList();
+            }
+            var booklist = new BookListModel { BookList = books };
+
+            return View(booklist);
+
+        }
+
+
+
 
         [HttpGet("allTheBooks")]
         public IActionResult AllTheBooks()

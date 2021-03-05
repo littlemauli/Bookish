@@ -1,0 +1,35 @@
+@model Bookish.Models.BookListModel;
+@using System.Collections.Generic; 
+
+
+<div>
+    <table>
+     @foreach (var book in @Model.BookList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(User => book.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>book.BookAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(User =>book.BookYear)
+                </td>
+                 <td>
+                    @Html.DisplayFor(User =>book.BookAvailableCopies)
+                </td>
+                 <td>
+                    @Html.DisplayFor(User =>book.BookTotalCopies)
+                </td>
+                @* <td>
+                    <form asp-controller="book" method="POST" asp-action="Delete" asp-route-id="@person.UserId" ><button type="submit"> Delete</button></form>
+                </td> *@
+            </tr>
+        }
+
+</table>
+
+      
+
+</div>

@@ -1,10 +1,10 @@
 @model Bookish.Models.UserListModel;
-@using System.Collections.Generic; 
+@using System.Collections.Generic;
 
 
 <div>
-    <ol>
-     @foreach (var person in @Model.UserList)
+    <table>
+        @foreach (var person in @Model.UserList)
         {
             <tr>
                 <td>
@@ -17,18 +17,14 @@
                     @Html.DisplayFor(User =>person.AmountBorrowedByUser)
                 </td>
                 <td>
-                    <form asp-controller="Accounts" method="POST" asp-action="Delete" asp-route-id="@person.UserId" ><button type="submit"> Delete</button></form>
-                    @* <form asp-controller="book" method="POST"    asp-action="checkout" asp-route-id="@person.UserId" >
-                        <button type="submit"> Checkout books</button>
-                        </form> *@
+                    <form asp-controller="Accounts" method="POST" asp-action="Delete" asp-route-id="@person.UserId"><button
+                            type="submit"> Delete</button></form>
                 </td>
             </tr>
         }
 
-</ol>
+    </table>
 
-      
+
 
 </div>
-
-

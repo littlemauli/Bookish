@@ -1,0 +1,13 @@
+@model Bookish.Models.BookModel;
+
+<div>
+
+
+@using(Html.BeginForm("searchOneBookResult", "book", FormMethod.Get)) {  
+    //the following are search options
+    
+    <b> Search by Title of book </b>
+       
+     @Html.TextBox("search") <input type = "submit"  name = "submit" value = "Search"/>  
+
+}
